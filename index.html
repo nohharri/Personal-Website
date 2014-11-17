@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8"> 
-  <body>
-    HEYYY
-  </body>
+   	<meta charset="UTF-8"> 
+    <script src="src/crafty.js"></script>
+	<script src="src/game.js"></script>
+	<script src="src/map.js"></script>
+	<script src="src/player1.js"></script>
+	<script src="src/player2.js"></script>
+	<script src="src/boy.js"></script>
+	<script src="src/enemy.js"></script>
+	<script src="src/scenes.js"></script>
+	<script src="src/teddyBear.js"></script>
+    <script>
+		window.addEventListener('load',Game.start);
+    </script>
+    <style type="text/css" media="screen">
+    body {
+      background: black;
+      text-align: center;
+      color: #DDD;
+      font-family: Arial;
+    }
+
+    .controls {
+      color: #BBB;
+    }
+
+    #cr-stage { margin: 20px auto 0; }
+
+    .bottom {
+      font-size: 12px;
+      color: #888;
+      margin-top: 50px;
+    }
+
+    .bottom a {
+      color: #AAA;
+    }
+  </style>
+
   </head>
+  <body>
+   <h2>Jake's Nightmare</h2>
+	<p>With the help of some magical doors, help guide Jake back to the safety of his bed!</p>
+	 
+	<p class="controls">Controls: Door 1: Use the arrow keys to move, down arrow key to open the door.
+									Door 2: Use WAD to move, S to open the door. When both doors are open, they create a link that can teleport Jake to safety! Collect all the teddy bears of the level and get him to the right of the screen to progress. Press SPACE to start! </p>
+	 
+	<div id="cr-stage"></div>
+	 
+	<p class="bottom">Created for the Turkey Jame Game Competition </a>.
+    <audio id="audioid" src="src/lana.mp3" preload="auto"> </audio>
+    <script>
+    var sample = document.getElementById("audioid");
+    sample.play();
+    </script>
+  </body>
 
 </html>
