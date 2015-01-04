@@ -1,46 +1,64 @@
 @charset "utf-8";
-.header {
-    width: 100%;
+body {
+    margin: 0;
+    background-color: darkgray;
+}
+
+.headerTop {
+    width: auto;
     height: auto;
-    background-color: #eef3f5;
+    background-color: white;
     text-align: center;
 }
 
-.headerContent {
-    width: 100%;
-    margin: 0 auto;
-}
-.nav {
-    height: 40px;
-    width: auto;
-    margin-left: 700px;
-    margin-right: 700px;
-    background: #a7e0ee;
-    text-align: center;
+.welcomeText {
+    text-align: center;  
+    display: inline-block;
+    font-size: 300%;
 }
 
 .nav ul {
     margin: 0;
     padding: 0;
+    padding-top: 22px;
+    padding-left: 30px;
 }
 
 .nav ul li {
-    list-style: none;
+    display: inline;
+    list-style-type: none;
+    padding-right: 50px;
+    margin-left: 10px;
 }
 
 .nav ul li a {
     text-decoration: none;
-    float: left;
-    display: block;
-    padding: 10px 20px;
-    color: black;
+    color: white;
 }
 
-.nav ul li a:hover {
-    color: white;   
+.nav {
+    font-size: 300%;
+    height: 100px;
+    width: 400px;
+    background-color: #a7e0ee;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
-.headerBreak {
-    width: 100%;
-    height: 0;
-    border-bottom: 2px solid #a7e0ee;
+
+table, th, td {
+    border: 1px solid black;
+}
+
+table {
+    width: 50%;
+    margin-right: 500px;
+    margin-left: 500px;
+}
+
+.bioSummary {
+    margin-left: 300px;
+    margin-right: 300px;
+    text-align: justify;
+    font-size: 300%;
 }
