@@ -8,8 +8,10 @@ Crafty.c('StartScreen',
 	init: function() {
 		this.requires('Actor, Color, Twoway, Gravity, Collision, Player')
 		.attr({x: 0, y: 0, w: 10, h: 10})
-		.bind('KeyDown', function(e) {
-	    	if(e.key == Crafty.keys.SPACE) {
+		.bind('KeyDown', function(e) 
+		{
+	    	if(e.key == Crafty.keys.SPACE) 
+	    	{
 	        	this.press = true
 	   	 	}
     	})

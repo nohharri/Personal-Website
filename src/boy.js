@@ -93,7 +93,7 @@ Crafty.c('Boy', {
 	teleport1: function() {
 		if (portalCount == 2 && enteredBoy == 0) {
 			this.x = door2AddressX;
-			this.y = door2AddressY;
+			this.y = door2AddressY+72;
 			enteredBoy = 1;
 		}
 	},
@@ -101,37 +101,26 @@ Crafty.c('Boy', {
 	teleport2: function() {
 		if (portalCount == 2 && enteredBoy == 0) {
 			this.x = door1AddressX;
-			this.y = door1AddressY;
+			this.y = door1AddressY+72;
 			enteredBoy = 1;
 		}
 	},
 
 	boyDie: function() {
+		open1_count = 0;
+		open2_count = 0;
+		isOpen = false;
+		isOpen2 = false;
+		
 		portalCount = 0;
 		door1AddressX = 0;
 		door1AddressY = 0;
 		door2AddressX = 0;
 		door2AddressY = 0;
 		if (levelID == 3) {
-			player1.open = false;
-			player2.open = false;
-			player1.destroy()
-			player2.destroy()
-			//Crafty.trigger('GoTo3', this);
-			player1 = Crafty.e('Player1')
-			.attr({x: 300, y: 1000})
-			//Insures Climbing platforms do not cause clipping
-			player1.antigravity();
-			player1.gravity();
+			var replayClick = Crafty.e('replayButton')
 				
-			player2 = Crafty.e('Player2')
-				.attr({x: 160,  y:1000})
-			//Insures Climbing platforms do not cause clipping
-			player2.antigravity();
-			player2.gravity();
-
-			Crafty.e('Boy')
-			.attr({x: 100, y: 1000})
+			var end = Crafty.e('endButton')
 		}
 		else if (levelID == 4) {
 			player1.open = false;

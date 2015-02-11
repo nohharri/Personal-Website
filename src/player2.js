@@ -1,4 +1,5 @@
 portalCount = 0;
+var keys2 = [];
 
 //Holds the address of the door for 
 //teleportations to occur
@@ -6,11 +7,15 @@ door2AddressX = 0;
 door2AddressY = 0;
 
 Crafty.c('Player2' , {
-	keyDown: false,
-	jumpKeyDown: false,
-	open: false,
+	open : false,
+	jumpKeyDown : false,
+	keyDown : false,
 	init: function() {
-		this.numPlayers += 1;
+		direction = 2;
+		// Whether or not the player is moving
+		moving = false;
+		right_pressed = false;
+		left_pressed = false;
 		this.requires('Actor, door2, Twoway2, Gravity, Collision, Player, SpriteAnimation')
 		.attr({x: 0, y: 0, w: Game.map_grid.tile.width, h: Game.map_grid.tile.height * 1.8})
 		.twoway2(10)
@@ -24,52 +29,146 @@ Crafty.c('Player2' , {
 		.gravityConst(.7)
 		.stopOnSolids()
 		.stopOnBox()
-		.bind('KeyDown', function(e) {
-		    if(e.key == Crafty.keys.S) {
-		        this.keyDown = true
-		    }
-		    if (e.key == Crafty.keys.W) {
-		    	this.jumpKeyDown = true
-		    }
-	    })
-	    .bind('KeyUp', function(e) {
-		    if(e.key == Crafty.keys.S) {
-		    	this.animate('door2_open',500,0,4,4);
-		        this.keyDown = false;
-		    }
-		    if (e.key == Crafty.keys.W) {
-		    	this.jumpKeyDown = false
-		    }
-	    })
 	    .bind('KeyDown', function(e)
 	    {
 	    	if(e.key == Crafty.keys.D)
 	    	{
-	    		this.animate('door2_walking_right', -1);
+	    		right_pressed = true;
+	    		if (isOpen == false) {
+		    		// If the player is already moving to the left
+		    		if (moving === true) {
+		    			//Make the player animation stationary
+		    			this.animate('door2_standing_left', -1);
+		    			grass_sound.stop();
+		    			moving = false;
+		    		}
+		    		// If only the right key is pressed
+		    		else {
+			    		direction = 1;
+		    			this.animate('door2_walking_right', -1);
+		    			grass_sound.play();
+		    			moving = true;
+			    	}
+		    	}
 	    	}
-	    	if(e.key == Crafty.keys.A)
+	    	else if(e.key == Crafty.keys.A)
 	    	{
-	    		this.animate('door2_walking_left', -1);
+	    		left_pressed = true;
+	    		if (isOpen == false) {
+		    		// If the player is already moving to the right
+		    		if (moving === true) {
+		    			//Make the player animation stationary
+		    			this.animate('door2_standing_right', -1);
+		    			grass_sound.stop();
+		    			moving = false;
+		    		}
+		    		else {
+			    		direction = -1;
+		    			this.animate('door2_walking_left', -1);
+		    			grass_sound.play();
+		    			moving = true;
+			    	}
+			    }
 	    	}
+	    	if(e.key == Crafty.keys.S) 
+	    	{
+		    	this.keyDown = true;
+		        ++open2_count;
+		        if((open2_count % 2 == 1) && isOpen == false)
+		        {
+		        	door_open.play();
+		        	door_closed.stop();
+		        	isOpen = true;
+		        	this.animate('door2_open', -1);
+		        }
+		        else
+		        {
+		        	door_closed.play();
+		        	door_open.stop();
+		        	isOpen = false;
+		        	if (direction === -1) {
+		        		this.animate('door2_standing_left', -1);
+		        	}
+		        	else if (direction === 1) {
+		        		this.animate('door2_standing_right', -1);
+		        	}
+		        }
+		    }
+		   	if(e.key == Crafty.keys.W) {
+	    		grass_sound.stop();
+	    	}
+	    	if (e.key == Crafty.keys.R) 
+		    {
+				console.log("R")
+		    	boy.boyDie()
+		    }
 	    })
 	    .bind('KeyUp', function(e) {
-	    	if(e.key == Crafty.keys.D)
+		    if(e.key == Crafty.keys.S) {
+		        this.keyDown = false
+				// If the user is pressing the left key
+    			if (left_pressed == true && isOpen == false) {
+    				this.animate('door2_walking_left', -1);
+	    			grass_sound.play();
+	    			moving = true;
+    			}
+    			else if (right_pressed == true && isOpen == false) {
+    				this.animate('door2_walking_right', -1);
+	    			grass_sound.play();
+	    			moving = true;
+    			}
+		    }
+		    if (e.key == Crafty.keys.W) {
+		    	this.jumpKeyDown = false
+		    }
+		   	if(e.key == Crafty.keys.D)
 	    	{
-	    		this.animate('door2_standing_right', -1);
+	    		right_pressed = false;
+	    		if(isOpen == false)
+	    		{
+	    			// If the user is pressing the left key
+	    			if (left_pressed === true) {
+	    				this.animate('door2_walking_left', -1);
+		    			grass_sound.play();
+		    			moving = true;
+	    			}
+	    			else {
+		    			this.animate('door2_standing_right', -1);
+		    			grass_sound.stop();
+		    			moving = false;
+		    		}
+	    		}
 	    	}
 	    	if(e.key == Crafty.keys.A)
 	    	{
-	    		this.animate('door2_standing_left', -1);
+	    		left_pressed = false;
+	    		if(isOpen == false)
+	    		{
+	    			if (right_pressed === true) {
+	    				this.animate('door2_walking_right', -1);
+		    			grass_sound.play();
+		    			moving = true;
+	    			}
+	    			else {
+		    			this.animate('door2_standing_left', -1);
+		    			grass_sound.stop();
+		    			moving = false;
+		    		}
+	    		}
 	    	}
 	    })
-
 	    .bind('EnterFrame', function(frame) {
+	    	//console.log("jumpspeed = " + this._jumpSpeed);
+	    	//console.log("gravity = " + this._gy);
+	    	//console.log("falling = " + this._falling);
 			//Won't go offscreen
+			//console.log("Moving = ");
+			//console.log(moving);
 			if (this.x > Crafty.viewport.width - this.w ||
 				this.x < 0){
 				this.x -= this._movement.x;
 			}
-			if (this.y > Crafty.viewport.height - this.h ) {
+			if (this.y > Crafty.viewport.height - this.h || this.y < 0) {
 				this.y -= this._movement.y;
 			}
 	    	if (this.keyDown && this.open == false) {
@@ -82,8 +181,9 @@ Crafty.c('Player2' , {
 	    	if (this.open) {
 		    	this.stopMovement();
 			}
+
 	    })
-		.bind('Death1', function(e) {
+		.bind('Death2', function(e) {
 			this.destroy()
 		})
 	},
@@ -91,6 +191,7 @@ Crafty.c('Player2' , {
 	portalize: function() {
 		this.antigravity()
 		this.keyDown = false
+		//FUTURE REFERENCE GET RID OF OPEN, USE ISOPEN
 		this.open = true;
 		portalCount += 1;
 		door2AddressX = this.x;
@@ -110,33 +211,28 @@ Crafty.c('Player2' , {
 		return this;
 	},
 	stopOnBox: function() {
-		this.onHit('Ground', this.stopDamnMovement);
+		this.onHit('Ground', this.stopJumpMovement);
 		return this;
 	},
-	player1Dies: function() {
+	player2Dies: function() {
 		this.trigger("PlayerDeath");
 		this.destroy();
 	},
-	// Stops the movement
+	// Stops the movement when player hits general solid stuff
 	stopMovement: function() {
-		//console.log(this._speed);
 		this._speed = 0;
 		if (this._movement) {
-			//console.log(this._movement.y);
 			this.x -= this._movement.x;
-			//if (this.jumpKeyDown)
-			this.y -= this._movement.y;
 		}
-		//this.y += 10;
 	},
-	stopDamnMovement: function() {
-		console.log("FUCK YEA");
+	// Stops the movement when the player hits the ground (so only when he jumps up into the ground)
+	stopJumpMovement: function() {
 		this._speed = 0;
 		if (this._movement) {
-			//console.log(this._movement.y);
-			//this.x -= this._movement.x;
-			//if (this.jumpKeyDown)
-			this.y += this._jumpSpeed;
+			this.x += this._movement.x;
+			// If the player is falling, make sure they're falling according to gravity
+			if (this._falling)
+				this.y += (this._gy);
 		}
 	}
 });
