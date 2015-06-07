@@ -12,13 +12,35 @@
         <div class = "welcomeText"> 
         James Kotzian
         </div>
-        <a href="index.html"><img src="images/logo.png" height="300"></a>
+        <a href="index.html"><img id=JKlogo class=JKButton src="images/logo.png" height="300"></a>
     </div>
     <div class="nav">
-        <ul>
-            <li> <a href="bio.html"> Bio </a> </li>
-            <li> <a href="portfolio.html"> Portfolio </a> </li>
-        </ul>
-    </div>
+        <center>
+        <table>
+            <tr>
+                <td width="300px">
+                    <a href="html/bio.html"> <img id=navbio class="JKButton" src="images/NavBio.png" onmouseover="selectedBio(this)" onmouseout="deselectedBio(this)" width="100%" height="auto" ></a>
+                </td>
+                <td width="300px">
+                    <a href="html/portfolio.html"> <img id=navportfolio class="JKButton" src="images/NavPortfolio.png" onmouseover="selectedPort(this)" onmouseout="deselectedPort(this)" width="100%" height="auto"</a>
+                </td>
+            </tr>
+        </table>
+        </center>
+    </div> 
+<script>
+    function selectedPort(x) {
+        x.src="images/NavPortfolioSelected.png";
+    }
+    function deselectedPort(x) {
+        x.src="images/NavPortfolio.png" 
+    }
+    function selectedBio(x) {
+        x.src="images/NavBioSelected.png";   
+    }
+    function deselectedBio(x) {
+        x.src="images/NavBio.png";
+    }
+</script>
 </body>
 </html>
