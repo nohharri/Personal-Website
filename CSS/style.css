@@ -1,25 +1,15 @@
 @charset "utf-8";
 body {
+    background-color: #000028;
     margin: 0;
-    background-color: #000028;
-}
-
-.headerTop {
-    width: auto;
-    height: auto;
-    background-color: #000028;
-    text-align: center;
+    z-index: 1; /* Make this 1 so that the canvas will be in the background */
 }
 
 .welcomeText {
+    width: auto;
     text-align: center;  
-    display: inline-block;
     font-size: 300%;
     color: white;
-}
-
-.nav table {
-    border-collapse: separate;
 }
 
 .portfolioTable table {
@@ -62,6 +52,38 @@ table.center {
     -moz-transform: scaleX(1.1) scaleY(1.1); /** Firefox **/
 }
 
+.headerTop {
+    width: 1000px;
+    height: auto;
+    position: relative;
+    clear: both;
+    margin-left: 35%;
+    z-index: 1;
+}
 
+.JKLogo {
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: inline-block;
+    text-align: left;
+}
 
+.nav {
+    width: 49%;
+    height: 50%;
+    position: relative;        
+    text-align: right;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.HomepageGame {
+/*
+    width: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+*/
+}
 

@@ -1,0 +1,8 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/Users/James/Documents/GitHub/Personal-Website/libs/EaselJS-0.8.1/src/createjs/utils/promote.js",
+        "C:/Users/James/Documents/GitHub/Personal-Website/libs/EaselJS-0.8.1/src/easeljs/filters/AlphaMapFilter.js",
+        "C:/Users/James/Documents/GitHub/Personal-Website/homepageGame.js",
+        "C:/Users/James/Documents/GitHub/Personal-Website/spaceGame.js"
+    ]
+}

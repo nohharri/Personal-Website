@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> James Kotzian's Website </title>
+    <title> James Kotzian </title>
     <meta charset="UTF-8"> 
 <!--    <script src="spaceGame.js"></script>-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.05.21.min.js"></script>
+    <script src="libs/EaselJS-0.8.1/lib/easeljs-0.8.1.min.js"></script>
+    <script src="homepageGame.js"></script>
     <link rel="stylesheet" type="text/css" href="CSS/style.css" />
 </head>
+<canvas id="MyCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%;"></canvas>
 <body>
-    <div class = "headerTop">
-        <div class = "welcomeText"> 
-        James Kotzian
+<div class="grad1"></div>
+<br/>
+    <div class="headerTop">
+        <br>
+        <div class="nav">
+            <a href="html/bio.html"> 
+                <img id=navbio class="JKButton" src="images/NavBio.png" 
+                     onmouseover="selectedBio(this)" 
+                     onmouseout="deselectedBio(this)" width="50%" height="auto">
+            </a>
+            <a href="html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="images/NavPortfolio.png" 
+                     onmouseover="selectedPort(this)" 
+                     onmouseout="deselectedPort(this)" width="49%" height="auto">
+            </a>/
+            <div class="welcomeText"> 
+                &#160&#160&#160James Kotzian
+            </div>
         </div>
-        <a href="index.html"><img id=JKlogo class=JKButton src="images/logo.png" height="300"></a>
+        <div class="JKLogo">
+            <a href="index.html"><img id=JKlogo class=JKButton src="images/logo.png" height="300"></a>
+        </div>
     </div>
-    <div class="nav">
-        <center>
-        <table>
-            <tr>
-                <td width="300px">
-                    <a href="html/bio.html"> <img id=navbio class="JKButton" src="images/NavBio.png" onmouseover="selectedBio(this)" onmouseout="deselectedBio(this)" width="100%" height="auto" ></a>
-                </td>
-                <td width="300px">
-                    <a href="html/portfolio.html"> <img id=navportfolio class="JKButton" src="images/NavPortfolio.png" onmouseover="selectedPort(this)" onmouseout="deselectedPort(this)" width="100%" height="auto"</a>
-                </td>
-            </tr>
-        </table>
-        </center>
-    </div> 
 <script>
     function selectedPort(x) {
         x.src="images/NavPortfolioSelected.png";
@@ -41,6 +48,6 @@
     function deselectedBio(x) {
         x.src="images/NavBio.png";
     }
-</script>
+</script> 
 </body>
 </html>
