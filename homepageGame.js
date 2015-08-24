@@ -76,9 +76,13 @@ function main() {
             createSquare();   
         }
         updateShapes(canvas_squares);
-        // Re-adjust the size of the stage
-        stage.canvas.width = window.innerWidth;
-        stage.canvas.height = window.innerHeight;
+        // Re-adjust the size of the stage if necessary
+        if (stage.canvas.width != window.innerWidth) {
+            stage.canvas.width = window.innerWidth;
+        }
+        if (stage.canvas.height != window.innerHeight) {
+            stage.canvas.height = window.innerHeight;
+        }
     }
     
     function render() {
