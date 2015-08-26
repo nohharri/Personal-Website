@@ -13,7 +13,6 @@ $("*").each(function() {
 
 function main() {
     canvas = document.getElementById("MyCanvas");
-    //canvas = document.createElement("canvas");
     
     width = window.innerWidth;
     height = window.innerHeight;
@@ -30,7 +29,7 @@ function main() {
     var canvas_squares = [];
     // The number of new canvas_squares_clockwise created everytime createSquare() is called
     var num_new_canvas_squares = 5;
-    var shape_lift_speed = 3;
+    var shape_lift_speed = 2;
     var create_shapes = true;
     
     var mouse_x = 0;

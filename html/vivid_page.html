@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> vivID </title>
+        <meta charset="UTF-8"> 
+        <script src="../jquery-1.11.3.min.js"></script>
+        <script src="../galleria/galleria-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    </head>
+    <body>
+    <div class = "backButton">
+            <a href="../html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="../images/back_button.png" 
+                onmouseover="selectedBack(this)" 
+                onmouseout="deselectedBack(this)" width = "8%"/>
+            </a>
+    </div>
+    <div class = "mainContainer">
+        <div class = "galleriaContainer">
+            <div class = "galleria">
+                <a href = "https://www.youtube.com/watch?v=bmcMIODxrKU"><img src = "../images/vivid_video_thumb.jpg"></a>
+                <img src = "../images/vivid_1.png">
+                <img src = "../images/vivid_2.jpg">
+                <img src = "../images/vivid_3.jpg">
+            </div>
+        </div>
+        <div class = "projectInfo">
+            <div class = "projectDescriptionHeader">
+                <a href="../HijabGameWebBuild/HijabGameWebBuild.html">
+                <img id=navportfolio src="../images/description.png" width="45%">
+            </a>
+        </div>
+            <div class = "projectDescription">
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I created this project along with Nick Virag for the University of Michigan hackathon MHacks in the Fall of 2014. For this hackathon, Nick and I wanted to experiment with augmented reality and Google Cardboard. We created an augmented reality app that would identify people that you look at! The user would don the Google Cardboard with their phone inside, which would reflect what the camera sees. They would look at a person, pull the magnetic strip, and then information about that person would appear in the right hand corner of their vision!
+                <br>
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This is how it works. We created a database where we stored profiles of people. This included an image of the person, their name, school, spirit animal, etc. When the user pulls the magnetic strip, the phone takes a screenshot of the person they are looking at. We then use facial recognition software to try and match that screenshot with somebody's face in our database. If there's a match, then we pop up a GUI in the right-hand corner of the person's screen listing all the information about that person. Pretty cool eh?
+            <br>
+            <br>
+            </div>
+            <div class = "projectDescriptionFooter">
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectedBack(x) {
+            x.src="../images/back_button_selected.png";
+        }
+        function deselectedBack(x) {
+            x.src="../images/back_button.png"; 
+        }
+    </script> 
+    <script>
+        Galleria.loadTheme('../galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+    </body>
+</html>

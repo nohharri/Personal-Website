@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Street Harassment IV </title>
+        <meta charset="UTF-8"> 
+        <script src="../jquery-1.11.3.min.js"></script>
+        <script src="../galleria/galleria-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    </head>
+    <body>
+    <div class = "backButton">
+            <a href="../html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="../images/back_button.png" 
+                onmouseover="selectedBack(this)" 
+                onmouseout="deselectedBack(this)" width = "8%"/>
+            </a>
+    </div>
+    <div class = "mainContainer">
+        <div class = "galleriaContainer">
+            <div class = "galleria">
+                <img src = "../images/hijabGameLogo.png">
+            </div>
+        </div>
+        <div class = "projectInfo">
+            <div class = "projectDescriptionHeader">
+                <a href="../HijabGameWebBuild/HijabGameWebBuild.html">
+                <img id=navportfolio src="../images/description.png" width="45%">
+            </a>
+        </div>
+            <div class = "projectDescription">
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I created this game for a project in my Academic Argumentation class. The topic was my choice, and I was interested in street harassment that women face in the United States. In particular, I looked at the difference between street harassment towards hijab-wearing women and "normally" dressed American women. I had to express my ideas in a creative format, and being a game developer, I naturally chose a video game! 
+                <br>
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The game is a beat-em-up brawler where players take the role of a woman walking the streets who must make it home without being harassed. The harassment appears as dialogue bubbles that are flung at the player that they must avoid, or else they are hurt. The player starts out wearing a hijab, and they receive hateful Islamophobic harassment and belittling pity. The player has the option to change their clothing to American style, but if they do so, they only receive different kinds of harassment: sexual harassment, slut shaming, and fashion policing. This shows a "no-win" situation when it comes to being an Islamic woman trying to walk American streets peacefully. If she embraces her culture, covers up, and wears the hijab, then she exposes herself to Islam-based harassment and pressure to Americanize. If she chooses to don the more revealing American attire; however, she still faces harassment - just other types of it. This is an oversimplified dichotomy, but it is purposefully done to show a particular angle of street harassment and how it negatively impacts women.
+                <br>
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I did all the programming, design, and art for the game (pixel art takes forever!!). There are two types of buildings in the background. The first is the business sector, which is filled with organizations that are known to be anti-Islam. These represent the negativity in American culture towards Islam. The second sector is the consumer sector, and it is full of women's beauty stores and advertisements that show pressures to Americanize and look a particular way. The contrast between the blue of the player and the red of the surroundings is to show how isolated and exposed someone can feel when they are being constantly harassed. This took me a little over a weekend to make. It was certainly a different concept and I wasn't sure how it would turn out, but I'm pleased with the results!
+            <br>
+            <br>
+            </div>
+            <div class = "projectDescriptionFooter">
+<!--                <span class = "centerButtonHelper"> </span>-->
+                    <a href="../HijabGameWebBuild/HijabGameWebBuild.html" target="_blank">
+                        <img id=navportfolio class="JKButton" src="../images/play_button.png" 
+                        onmouseover="selectedPlay(this)" 
+                        onmouseout="deselectedPlay(this)" width = "100px"/>
+                    </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectedPlay(x) {
+            x.src="../images/play_button_selected.png";
+        }
+        function deselectedPlay(x) {
+            x.src="../images/play_button.png"; 
+        }
+        function selectedBack(x) {
+            x.src="../images/back_button_selected.png";
+        }
+        function deselectedBack(x) {
+            x.src="../images/back_button.png"; 
+        }
+    </script> 
+    <script>
+        Galleria.loadTheme('../galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Volition </title>
+        <meta charset="UTF-8"> 
+        <script src="../jquery-1.11.3.min.js"></script>
+        <script src="../galleria/galleria-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    </head>
+    <body>
+    <div class = "backButton">
+            <a href="../html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="../images/back_button.png" 
+                onmouseover="selectedBack(this)" 
+                onmouseout="deselectedBack(this)" width = "8%"/>
+            </a>
+    </div>
+    <div class = "mainContainer">
+        <div class = "galleriaContainer">
+            <div class = "galleria">
+                <img src = "../images/volition_2.jpg"/>
+                <img src = "../images/volition_1.jpg"/>
+                <img src = "../images/volition_3.jpg"/>
+                <img src = "../images/saints_IV.jpg"/>
+                <img src = "../images/saints_IV_2.jpg"/>
+                <img src = "../images/saints_IV_3.jpg"/>
+                <img src = "../images/saints_IV_4.jpg"/>
+                <img src = "../images/Red.jpg"/>
+                <img src = "../images/Red_2.jpg"/>
+                <img src = "../images/Red_3.jpg"/>
+            </div>
+        </div>
+        <div class = "projectInfo">
+            <div class = "projectDescriptionHeader">
+                <a href="../HijabGameWebBuild/HijabGameWebBuild.html">
+                    <img id=navportfolio src="../images/description.png" width="45%">
+                </a>
+            </div>
+            <div class = "projectDescription">
+                <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Over this past summer, I worked as a Game Designer for Deepsilver Volition, the makers of the Saints Row and Red Faction series. I worked on the combat of their current project which is unannounced, so unfortunately I can't say anything about it! I will post back here with any information as soon as it is publicly available :)
+            <br>
+            <br>
+            </div>
+            <div class = "projectDescriptionFooter">
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectedPlay(x) {
+            x.src="../images/play_button_selected.png";
+        }
+        function deselectedPlay(x) {
+            x.src="../images/play_button.png"; 
+        }
+        function selectedBack(x) {
+            x.src="../images/back_button_selected.png";
+        }
+        function deselectedBack(x) {
+            x.src="../images/back_button.png"; 
+        }
+    </script> 
+    <script>
+        Galleria.loadTheme('../galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+    </body>
+</html>

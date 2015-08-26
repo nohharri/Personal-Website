@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Virtual Reality Broom Flying </title>
+        <meta charset="UTF-8"> 
+        <script src="../jquery-1.11.3.min.js"></script>
+        <script src="../galleria/galleria-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+    </head>
+    <body>
+    <div class = "backButton">
+            <a href="../html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="../images/back_button.png" 
+                onmouseover="selectedBack(this)" 
+                onmouseout="deselectedBack(this)" width = "8%"/>
+            </a>
+    </div>
+    <div class = "mainContainer">
+        <div class = "galleriaContainer">
+            <div class = "galleria">
+                <a href = "https://www.youtube.com/watch?v=8I2tAC7BR20"><img src = "../images/quidditch_video.jpg"></a>
+            </div>
+        </div>
+        <div class = "projectInfo">
+            <div class = "projectDescriptionHeader">
+                <img id=navportfolio src="../images/description.png" width="45%">
+            </a>
+        </div>
+            <div class = "projectDescription">
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This project was created at the University of Michigan's legendary MHacks hackathon in Detroit in January of 2014. The rules of the competition are simple: you have 38 hours to make the coolest thing you can. I formed a group with a few of my peers, and with me having an Oculus Rift developer's kit, we tried thinking of the coolest virtual reality experience people would want. We thought, "well everyone wants to be a boss wizard and soar through the skies like Harry friggin Potter, right?" And so we set out to do that! We originally had a standard control scheme in mind, but then I suggested we take it to the next level by using a Wii remote actually attached to a broomstick. That way, players could manuever the broom to fly around as if they were actually a high-flying wizard. We originally shot for gold and tried to make an actual Quidditch simulator, but we found that realistically flying around on a broom was hard (and exciting) enough for the user. We titled our creation, the Virtual Reality Broom Flying Simulator!
+            <br>
+            <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We built the demo in Unity, utilizing the Oculus plugin for easy plug and play virtual reality support. The trickier part was getting the Wii remote to play nice with the computer. We use bluetooth to capture input data from the Wii remote in Unity (roll, pitch, yaw) and we transfered that data into an intuitive control scheme. From there, we spent the rest of our time crafting the world players flew around in with interesting things and Harry Potter landmarks. We had bludgers and birds that flew around, Hogwarts castle, Hagrids hut, and even a dragon that followed the player!
+            <br>
+            <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;People were very receptive to the simulation. We demoed and user tested throughout the competition, and we had so many people who stopped by to try it out that eventually we had to tell them to come back later so we could actually work on the dang thing! When the time-limit ended and the showcase began, we were very excited to show off what we made. Seeing the line for our demo stretch to 20 people and seeing the smiles on people's faces as they flew around our Harry Potter world felt amazing. It's a truly wonderful feeling to see people enjoy something you've built.
+            <br>
+            <br>    
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;We were invited to the show floor as one of the Top 7 teams. I had the honor of looking absolutely ridiculous by straddling a broom between my legs as we showed our project to the world, and it was awesome. Amongst 238 teams and over 1000 hackers, we were awarded 2nd place in the competition. It was an amazing experience that I'll never forget.
+            <br>
+            <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;After the competition, I significantly improved the demo by re-doing the entire world, tweaking the control scheme, and making the broom respond more realistically. Doing this, I learned a great deal about Unity and how to craft an interesting world. I demoed this new and improved version the Techweek Detroit conference and at the Midwest Game Developer's Summit.
+            <br>
+            <br>
+            </div>
+            <div class = "projectDescriptionFooter">
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectedBack(x) {
+            x.src="../images/back_button_selected.png";
+        }
+        function deselectedBack(x) {
+            x.src="../images/back_button.png"; 
+        }
+    </script> 
+    <script>
+        Galleria.loadTheme('../galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+    </body>
+</html>
