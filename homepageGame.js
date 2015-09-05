@@ -107,8 +107,21 @@ function main() {
             else {
                 my_square_size = 10;
             }
+//             var shape = new createjs.Shape().set({x:100,y:100});
+//             shape.graphics.beginFill("#ff0000").drawCircle(0,0,50);
+
+//             shape.filters = [blurFilter];
+//             var bounds = blurFilter.getBounds();
+//            shape.cache(-50+bounds.x, -50+bounds.y, 100+bounds.width, 100+bounds.height);
+//            stage.addChild(shape);
+
             // Color them with this color if I want to "reveal" them #000028
             my_square.graphics.beginFill("white").drawRect(0, 0, my_square_size, my_square_size);
+            //Apply the blur filter
+//            var blurFilter = new createjs.BlurFilter(7, 7, 1);
+//            my_square.filters = [blurFilter];
+//            var bounds = blurFilter.getBounds();
+//            my_square.cache(random_spawn_x_pos - my_square_size, canvas.height - my_square_size, my_square_size, my_square_size);
             // Set position of Shape instance
             my_square.x = random_spawn_x_pos;
             my_square.y = canvas.height;
@@ -164,6 +177,7 @@ function main() {
             // Only change the color if it hasn't already been changed (for optimization)
             // and it's close enough to the mouse
             if (Math.abs(x_difference) < color_distance && shape.id != 1 ) {
+                console.log("Hey!");
                 // Change the color of the flowing shape
                 // Randomly color it blue or yellow
                 var random_color = Math.floor(Math.random() * 2);
@@ -174,6 +188,8 @@ function main() {
                     shape.graphics.beginFill("yellow").drawRect(0, 0, bounds.width, bounds.height);   
                 }
                 shape.id = 1;
+                // Update the cached shape so it changes
+                //shape.updateCache();
             }
         }
     }
@@ -196,6 +212,7 @@ function main() {
                     current_shape.id = 0;
                     var bounds = current_shape.getBounds();
                     current_shape.graphics.beginFill("white").drawRect(0, 0, bounds.width, bounds.height);
+                    //current_shape.updateCache();
                 }
                 var random_spawn_x_pos = Math.floor(Math.random() * creation_width);
                 current_shape.y = canvas.height;
