@@ -203,6 +203,7 @@ table.center {
     background: url("../images/yellow_grid_pattern.png");
     background-repeat: repeat-x;
     background-size: cover;
+    text-align: left;
 }
 
 .projectDescriptionHeader img {

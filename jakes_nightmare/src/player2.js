@@ -99,8 +99,7 @@ Crafty.c('Player2' , {
 	    	}
 	    	if (e.key == Crafty.keys.R) 
 		    {
-				console.log("R")
-		    	boy.boyDie()
+		    	//boy.boyDie()
 		    }
 	    })
 	    .bind('KeyUp', function(e) {

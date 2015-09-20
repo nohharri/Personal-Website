@@ -24,7 +24,7 @@ Crafty.c('Enemy', {
 			//Move the enemy in the game loop
 			//If it hits the edge of the screen
 			if (this.x > Crafty.viewport.width - this.w || this.x < 0){
-				console.log("OH HAI")
+				//console.log("OH HAI")
 				//Switch directions
 				this.switchDirection();
 			}
@@ -36,16 +36,15 @@ Crafty.c('Enemy', {
 			else {
 				this.x -= this.speed;
 			}
-			if (enteredEnemy == 1 && !this.hit('Player1') && !this.hit('Player2')) {
-				enteredEnemy = 0;
-			}
 		})
 	},
 
 	setDirection: function(dir) {
 		this.direction = dir;
 	},
-
+	setEnemyEntered: function(val) {
+		this.enteredEnemy = val;
+	},
 	switchDirection: function() {
 		this.direction *= -1;
 		if(this.direction == 1)
@@ -62,39 +61,14 @@ Crafty.c('Enemy', {
 		this.onHit('Hazard', this.enemyDie)
 		return this;
 	},
-	// collidePlayer: function() {
-	//  	this.onHit('Player1', this.player1Hit)
-	//  	this.onHit('Player2', this.player2Hit)
-	//  	return this;
-	// },
-	// player1Hit: function() {
-	// 	if (portalCount == 2 && enteredEnemy == 0) {
-	// 		this.x = door2AddressX;
-	// 		this.y = door2AddressY;
-	// 		enteredEnemy = 1;
-	// 	}
-	// 	//else if (portalCount != 2 && enteredEnemy == 0){
-	// 		//Crafty.trigger('Death1');
-	// 	//}
-	// },
-	// player2Hit: function() {
-	// 	if (portalCount == 2 && enteredEnemy == 0) {
-	// 		this.x = door1AddressX;
-	// 		this.y = door1AddressY;
-	// 		enteredEnemy = 1;
-	// 	}
-	// 	//else if (portalCount != 2 && enteredEnemy == 0){
-	// 		//Crafty.trigger('Death2');
-	// 	//}
-	// },
 
 	enemyDie: function() {
 		this.destroy()
 	},
 	// Registers a stop-movement function to be called when
-	// this entity hits an entity with the "Solid" component
+	// this entity hits an entity with the "Solfid" component
 	switchOnSolids: function() {
 		this.onHit('Solid', this.switchDirection);
 		return this;
-	},
+	}
 })

@@ -17,7 +17,7 @@ Crafty.c("teddyBears", {
 	destroyTeddy: function() {
 		this.numBears -= 1;
 		numTeddy -= 1;
-		console.log(numTeddy)
+		tick.play();
 		this.destroy();
 	}
 });

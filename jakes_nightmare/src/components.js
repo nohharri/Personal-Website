@@ -35,10 +35,4 @@ Crafty.c('Actor', {
     },
 });
 
-Crafty.c('Ground', {
-	init: function() {
-		this.requires('Actor, Color, Solid')
-			.color('green');
-	}
-});
 

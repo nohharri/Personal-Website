@@ -35,6 +35,7 @@ Crafty.c('Player1' , {
 	    	if(e.key == Crafty.keys.RIGHT_ARROW)
 	    	{
 	    		this.right_pressed = true;
+	    		//console.log(numTeddy);
 	    		if (this.isOpen == false) {
 		    		// If the player is already moving to the left
 		    		if (this.moving === true) {
@@ -46,7 +47,7 @@ Crafty.c('Player1' , {
 		    		// If only the right key is pressed
 		    		else {
 			    		this.direction = 1;
-		    			console.log("Right");
+		    			//console.log("Right");
 		    			this.animate('door1_walking_right', -1);
 		    			grass_sound.play();
 		    			this.moving = true;
@@ -59,7 +60,7 @@ Crafty.c('Player1' , {
 	    		if (this.isOpen == false) {
 		    		// If the player is already moving to the right
 		    		if (this.moving === true) {
-		    			console.log("Here");
+		    			//console.log("Here");
 		    			//Make the player animation stationary
 		    			this.animate('door1_standing_right', -1);
 		    			grass_sound.stop();
@@ -102,8 +103,7 @@ Crafty.c('Player1' , {
 	    	}
 	    	if (e.key == Crafty.keys.R) 
 		    {
-				console.log("R")
-		    	boy.boyDie()
+		    	boy.boyDie();
 		    }
 	    })
 	    .bind('KeyUp', function(e) {
@@ -161,12 +161,7 @@ Crafty.c('Player1' , {
 	    	}
 	    })
 	    .bind('EnterFrame', function(frame) {
-	    	//console.log("jumpspeed = " + this._jumpSpeed);
-	    	//console.log("gravity = " + this._gy);
-	    	//console.log("falling = " + this._falling);
-			//Won't go offscreen
-			//console.log("Moving = ");
-			//console.log(moving);
+			//console.log(numTeddy);
 			if (this.x > Crafty.viewport.width - this.w ||
 				this.x < 0){
 				this.x -= this._movement.x;
@@ -192,6 +187,7 @@ Crafty.c('Player1' , {
 	},
 
 	portalize: function() {
+		//TURN THIS BACK ON IF YOU WANT NO GRAVITY FOR OPEN DOORS
 		this.antigravity()
 		this.keyDown = false
 		//FUTURE REFERENCE GET RID OF OPEN, USE ISOPEN
@@ -202,6 +198,7 @@ Crafty.c('Player1' , {
 	},
 
 	unportalize: function() {
+		//TURN THIS BACK ON IF YOU WANT NO GRAVITY FOR OPEN DOORS
 		this.gravity('Solid')
 		this.keyDown = false
 		this.open = false;
