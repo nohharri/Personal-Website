@@ -91,6 +91,7 @@ table.center {
     display: inline-block;
     text-align: left;
     vertical-align: text-bottom;
+    overflow: hidden;
 }
 
 .nav {
@@ -178,8 +179,8 @@ table.center {
 .galleriaContainer {
     width: 59%;
     text-align: right;
-    display: inline-block;
     position: relative;
+    float: left
 }
 
 .galleria { 
@@ -197,13 +198,13 @@ table.center {
 }
 
 .projectDescriptionHeader {
-    height: 13%;
     width: 100%;
     display: inline-block;
     background: url("../images/yellow_grid_pattern.png");
     background-repeat: repeat-x;
     background-size: cover;
     text-align: left;
+    z-index: 10;
 }
 
 .projectDescriptionHeader img {
@@ -215,7 +216,6 @@ table.center {
 .projectDescription {
     height: 71%;
     color: white;
-    font-weight: bold;
     font-size: 110%;
     text-align: justify;
     overflow-y: auto;
@@ -223,11 +223,12 @@ table.center {
     padding-left: 5px;
     padding-right: 5px;
     font-family: 'Play', sans-serif;
-/*
-    background: url("../images/blue_grid_pattern.png");
+    background-color: #081317;
+
+/*    background: url("../images/blue_grid_pattern.png");
     background-repeat: repeat-x;
-    background-size: cover;
-*/
+    background-size: cover; */
+
 }
 
 .projectDescriptionFooter {
@@ -272,4 +273,13 @@ table.center {
     text-align: justify;
     display: inline-block;
     font-family: 'Play', sans-serif;
+}
+
+@media screen and (max-width: 700px) {
+    .galleriaContainer {
+        width: 100%;
+    }
+    .projectInfo {
+        width: 100%;
+    }
 }
