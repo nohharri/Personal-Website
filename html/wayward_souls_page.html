@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> James Kotzian - Wayward Souls</title>
+        <meta charset="UTF-8"> 
+        <script src="../jquery-1.11.3.min.js"></script>
+        <script src="../galleria/galleria-1.4.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../CSS/style.css" />
+        <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class = "backButton">
+            <a href="../html/portfolio.html">
+                <img id=navportfolio class="JKButton" src="../images/back_button.png" 
+                onmouseover="selectedBack(this)" 
+                onmouseout="deselectedBack(this)" width = "8%"/>
+            </a>
+    </div>
+    <div class = "projectTitle">
+        Wayward Souls
+    </div>
+    <div class = "mainContainer">
+        <div class = "galleriaContainer">
+            <div class = "galleria">
+                <a href = "https://www.youtube.com/watch?v=E3KsuVijbrM&feature=youtu.be"> <img src = "../images/wayward_screenshot_1.jpg"> </a>
+                <img src = "../images/wayward_screenshot_2.jpg">
+                <img src = "../images/wayward_Screenshot_3.jpg">
+            </div>
+        </div>
+        <div class = "projectInfo">
+            <div class = "projectDescriptionHeader">
+                <img id=navportfolio src="../images/description.png" width="45%">
+            </a>
+        </div>
+            <div class = "projectDescription">
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A lone wanderer is traveling through the forest at night when he encounters an eerie statue garden. As he continues on his way, he notices that some of the statues appear to be getting closer and closer, and their eyes seem to be watching his every step...
+                <br>
+                <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I made this game in one week as a part of my game development class at the University of Michigan. At the forefront of this game are the statues. Some of the statues are possessed and will move closer to the player when they are not looking. If they are neglected long enough, they will kill the player. The player can destroy statues with their shotgun, but they have very limited ammo. More statues will become possessed over time, and the player must survive until dawn (when the countdown reaches zero).
+            <br>
+            <br>
+            </div>
+            <div class = "projectDescriptionFooter">
+                <a href="../WaywardSoulsWebBuild/WaywardSoulsWebBuild.html" target="_blank">
+                    <img id=navportfolio class="JKButton" src="../images/play_button.png" 
+                    onmouseover="selectedPlay(this)" 
+                    onmouseout="deselectedPlay(this)" width = "100px"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function selectedPlay(x) {
+            x.src="../images/play_button_selected.png";
+        }
+        function deselectedPlay(x) {
+            x.src="../images/play_button.png"; 
+        }
+        function selectedBack(x) {
+            x.src="../images/back_button_selected.png";
+        }
+        function deselectedBack(x) {
+            x.src="../images/back_button.png"; 
+        }
+    </script> 
+    <script>
+        Galleria.loadTheme('../galleria/themes/classic/galleria.classic.min.js');
+        Galleria.run('.galleria');
+    </script>
+    </body>
+</html>
