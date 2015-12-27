@@ -107,6 +107,10 @@ table.center {
     -moz-transform: scaleX(1.1) scaleY(1.1); /** Firefox **/
 }
 
+.PortfolioButton {
+    
+}
+
 .headerTop {
     width: 100%;
     height: 250px;
@@ -297,8 +301,9 @@ table.center {
 }
 
 .backButton {
-    width: 59%;
+    width: 57%;
     display: inline-block;
+    margin-left: 30px;
 }
 
 .backButton img {
